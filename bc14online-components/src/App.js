@@ -1,22 +1,10 @@
 import { Component } from 'react';
-import Site from './components/Site/Site';
-import Title from './components/Title/Title';
-import Card from './components/Card/Card';
-import Section from './components/Section/Section';
-import ElementsList from './components/ElementsList/ElementsList';
-import UserList from './db/userList.json';
-
-// const App = () => {
-
-//         return (
-//                 <Fragment>
-//                 <Site/>
-//                 <Title/>
-//                 </Fragment>
-//         );
-// }
-
-// export default App;
+import Site from 'components/Site/Site';
+import Title from 'components/Title/Title';
+import Card from 'components/Card/Card';
+import Section from 'components/Section/Section';
+import ElementsList from 'components/ElementsList/ElementsList';
+import UserList from 'db/userList.json';
 class App extends Component {
   title = 'Hello friends!!!';
 
