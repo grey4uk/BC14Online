@@ -1,0 +1,6 @@
+@value colorText: #0f0;
+@value bodyColor:#000;
+
+:global(.global-styles) {
+        background: rgb(230, 228, 228);
+}

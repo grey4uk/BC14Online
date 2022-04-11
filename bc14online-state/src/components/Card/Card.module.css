@@ -1,0 +1,20 @@
+@value colorText from 'assets/global.module.css';
+@value bodyColor from 'assets/global.module.css';
+
+.headstyle {
+        color: colorText;
+        background: bodyColor;
+}
+
+.backForCard {
+        background: rgb(174, 241, 174);
+}
+
+.wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 400px;
+        composes: backForCard
+}
