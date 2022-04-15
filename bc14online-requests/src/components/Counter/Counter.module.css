@@ -1,0 +1,19 @@
+.container {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, .4);
+
+}
+
+.hide {
+        position: fixed;
+        top: 0;
+        left: 0;
+}
+
+.wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
