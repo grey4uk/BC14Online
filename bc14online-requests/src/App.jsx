@@ -4,13 +4,14 @@ import 'assets/rootColors.css';
 import Counter from 'components/Counter/Counter';
 import Button from 'components/Button';
 import Form from 'components/Form/Form';
-import PokemonsList from './components/PokemonsList/PokemonsList';
+import PokemonsList from 'components/PokemonsList/PokemonsList';
 
 import {
   getPokemons,
   getPokemonByName,
 } from 'services/pokemonApi';
-import SearchBar from './components/SearchBar/SearchBar';
+import SearchBar from 'components/SearchBar/SearchBar';
+import Loader from 'components/Loader/Loader';
 
 class App extends Component {
   state = {
@@ -103,7 +104,7 @@ class App extends Component {
     return (
       <>
         {loading ? (
-          <h1>Loading....</h1>
+          <Loader />
         ) : (
           <div
             style={{
