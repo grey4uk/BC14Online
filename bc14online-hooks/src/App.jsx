@@ -12,7 +12,7 @@ import {
 } from 'services/pokemonApi';
 import SearchBar from 'components/SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
-import { useLocalStorage } from 'assets/hooks';
+import { useLocalStorage } from 'hooks';
 // import Clicker from 'components/Clicker/Clicker';
 import { Constants } from 'assets/constants';
 

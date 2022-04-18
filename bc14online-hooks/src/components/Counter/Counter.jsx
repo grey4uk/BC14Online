@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import s from './Counter.module.css';
 
 import Button from 'components/Button';
-import { useLocalStorage, useMethods } from 'assets/hooks';
+import { useLocalStorage, useMethods } from 'hooks';
 import { Constants } from 'assets/constants';
 
 // class Counter extends Component {
