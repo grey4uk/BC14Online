@@ -1,0 +1,9 @@
+.active {
+        padding: 10px;
+        background: green;
+}
+
+.unactive {
+        composes: active;
+        background: red;
+}
