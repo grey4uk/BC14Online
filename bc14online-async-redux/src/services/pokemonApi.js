@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 axios.defaults.baseURL =
-  'https://pokeapi.co/api/v2/pokemons';
+  'https://pokeapi.co/api/v2/pokemon';
 
 const getPokemons = async (loadingOff) => {
   try {

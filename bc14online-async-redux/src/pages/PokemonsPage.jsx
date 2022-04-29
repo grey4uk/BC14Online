@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import Loader from 'components/Loader/Loader';
 import SearchBar from 'components/SearchBar/SearchBar';
 import Button from 'components/Button';
-import { setQuery } from 'redux/pokemons/pokemonsSlice';
-import operations from 'redux/pokemons/pokemons-operations';
+import { setQuery } from 'redux/pokemons/pokemonsAsyncSlice';
+// import operations from 'redux/pokemons/pokemons-operations';
 import pokemonsSelectors from 'redux/pokemons/pokemons-selector';
-import { fetchPokemons } from 'redux/pokemons/pokemonsAsyncThunks';
+import {
+  fetchPokemons,
+  fetchOnePokemon,
+} from 'redux/pokemons/pokemonsAsyncThunks';
 
 const LazyPokemonsList = React.lazy(() =>
   import(
@@ -40,10 +43,10 @@ const PokemonsPage = () => {
   );
   const myConnectionWithPokemonsSlice = useDispatch();
 
-  const {
-    getPokemonsOperation,
-    getPokemonByNameOperation,
-  } = operations;
+  // const {
+  //   getPokemonsOperation,
+  //   getPokemonByNameOperation,
+  // } = operations;
 
   const handleSearch = (e) => {
     const {
@@ -58,9 +61,10 @@ const PokemonsPage = () => {
   }, [myConnectionWithPokemonsSlice]);
 
   const getOnePokemon = () => {
-    myConnectionWithPokemonsSlice(
-      getPokemonByNameOperation(query)
-    );
+    myConnectionWithPokemonsSlice(fetchOnePokemon(query)); //From asyncThunkOperations
+    // myConnectionWithPokemonsSlice(
+    //   getPokemonByNameOperation(query)
+    // );
   };
 
   return (

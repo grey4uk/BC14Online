@@ -48,7 +48,7 @@ const LazyPokemonListItem = lazy(() =>
 );
 
 const App = () => {
-  const [token, setToken] = useState('true');
+  const [token] = useState('true');
   return (
     <>
       <div

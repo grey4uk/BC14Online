@@ -1,6 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchPokemons } from './pokemonsAsyncThunks';
+import {
+  fetchPokemons,
+  fetchOnePokemon,
+} from './pokemonsAsyncThunks';
 
 const pokemonsAsyncSlice = createSlice({
   name: 'ASYNC_POKEMON',
@@ -11,6 +14,11 @@ const pokemonsAsyncSlice = createSlice({
       pokemons: [],
       query: '',
       pokemonImage: '',
+    },
+  },
+  reducers: {
+    setQuery: (state, action) => {
+      state.pokemons.query = action.payload;
     },
   },
   extraReducers: {
@@ -29,6 +37,26 @@ const pokemonsAsyncSlice = createSlice({
       //       console.log('rejected payload', payload);
       return { ...state, loading: false, error: 'error' };
     },
+    [fetchOnePokemon.pending]: (state, _) => {
+      return { ...state, loading: true, error: '' };
+    },
+    [fetchOnePokemon.fulfilled]: (state, action) => {
+      const { payload } = action;
+      const { pokemons } = state;
+      return {
+        ...state,
+        loading: false,
+        pokemons: { ...pokemons, pokemonImage: payload },
+      };
+    },
+    [fetchOnePokemon.rejected]: (state, _) => {
+      return {
+        ...state,
+        loading: false,
+        error: 'error for one pokemon',
+      };
+    },
   },
 });
+export const { setQuery } = pokemonsAsyncSlice.actions;
 export default pokemonsAsyncSlice.reducer;

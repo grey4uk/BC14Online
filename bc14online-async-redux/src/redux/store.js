@@ -12,8 +12,8 @@ import {
 } from 'redux-persist';
 
 const customMiddleWare = (store) => (next) => (action) => {
-  console.log('state', store.getState());
-  console.log('Middleware triggered:', action);
+  // console.log('state', store.getState());
+  // console.log('Middleware triggered:', action);
   next(action);
 };
 
